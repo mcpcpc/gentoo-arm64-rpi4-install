@@ -7,3 +7,4 @@ media-gfx/sxiv
 media-gfx/scrot
 media-sound/alsa-utils
 x11-misc/x11vnc
+x11-misc/dmenu
