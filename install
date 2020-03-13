@@ -2,6 +2,7 @@ app-admin/doas
 app-misc/neofetch
 app-misc/tmux
 app-editors/vim
+dev-vcs/git
 mail-client/mutt
 media-gfx/sxiv
 media-gfx/scrot
