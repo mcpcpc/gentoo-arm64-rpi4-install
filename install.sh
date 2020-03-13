@@ -1,7 +1,6 @@
 DEVICE=sda
 STAGE3SRC=https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20200311T214502Z/hardened/stage3-amd64-hardened-20200311T214502Z.tar.xz
 HOSTNAME=mcpc
-ETHNAME=
 
 parted -a optimal /dev/${DEVICE} -s print
 parted -a optimal /dev/${DEVICE} -s mklabel gpt
