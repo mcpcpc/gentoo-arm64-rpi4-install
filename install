@@ -10,6 +10,7 @@ media-gfx/sxiv
 media-gfx/scrot
 media-sound/alsa-utils
 net-irc/sic
+sys-fs/exfat-utils
 www-client/surf
 x11-misc/x11vnc
 x11-misc/dmenu
