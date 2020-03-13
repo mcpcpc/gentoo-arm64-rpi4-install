@@ -5,3 +5,4 @@ app-editors/vim
 mail-client/mutt
 media-gfx/sxiv
 media-gfx/scrot
+media-sound/alsa-utils
