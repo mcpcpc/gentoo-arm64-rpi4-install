@@ -6,6 +6,7 @@ mail-client/mutt
 media-gfx/sxiv
 media-gfx/scrot
 media-sound/alsa-utils
+www-client/surf
 x11-misc/x11vnc
 x11-misc/dmenu
 x11-terms/st
