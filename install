@@ -9,6 +9,7 @@ mail-client/mutt
 media-gfx/sxiv
 media-gfx/scrot
 media-sound/alsa-utils
+media-sound/cmus
 net-irc/sic
 sys-fs/exfat-utils
 www-client/surf
