@@ -3,6 +3,7 @@ app-misc/neofetch
 app-misc/tmux
 app-editors/vim
 app-office/sc
+app-shells/bash-completion
 dev-vcs/git
 mail-client/mutt
 media-gfx/sxiv
