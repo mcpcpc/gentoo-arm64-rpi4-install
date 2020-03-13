@@ -8,3 +8,5 @@ media-gfx/scrot
 media-sound/alsa-utils
 x11-misc/x11vnc
 x11-misc/dmenu
+x11-terms/st
+x11-wm/dwm
