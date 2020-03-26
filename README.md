@@ -7,8 +7,8 @@ Provide a set a simple set of instructions to succesfully configure a minimal, b
 ## Hardware/Software Requirements
 * A PC with Gentoo already installed.  If you are not sure how to do this, you can use a second MicroSD card and boot into an existing 64-bit Gentoo [image](https://github.com/sakaki-/gentoo-on-rpi-64bit) (better yet, if you aren't comfort with the instructions below, just stick with the image!).
 * Raspberry Pi 4 (or newer)
-* 32GB MicroSD Card (if needed)
-* SD Card adapter (dependent on platform)
+* 32GB MicroSD Card (capacity irrelevant, but probably no less than 8GB)
+* SD Card adapter (if needed)
 * LAN Connection (must be connected to the internet for initial setup and updates)
 
 ## Important
