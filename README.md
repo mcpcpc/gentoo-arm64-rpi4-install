@@ -315,7 +315,7 @@ root # rc-update add net.eth0 boot
 root # rc-update --update
 ```
 
-## References
+## Credits
 * https://wiki.gentoo.org/wiki/User:NeddySeagoon/Raspberry_Pi4_64_Bit_Install
 * https://wiki.gentoo.org/wiki/Raspberry_Pi_3_64_bit_Install
 * https://wiki.gentoo.org/wiki/Raspberry_Pi/Quick_Install_Guide
