@@ -15,6 +15,7 @@ Some of these seem obvious, but they're not very high on my priority list as i c
 - 32GB MicroSD Card (capacity irrelevant, but probably no less than 8GB)
 - SD Card adapter (if needed)
 - LAN Connection (must be connected to the internet for initial setup and updates)
+- Keyboard, Mouse, Monitor and all peripheral cables. 
 
 ## Important
 - These instructions assume some knowledge/experience with a Linux.  **I would HIGHLY recommend not deviating from the installation order unless you know what you are doing**.
