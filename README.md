@@ -57,13 +57,14 @@ user@localhost ~/raspberrypi/linux $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-li
 4. Build the Kernel.
 
 ```console
-user $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make -j5
+user@localhost ~/raspberrypi/linux $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make -j5
+user@localhost ~/raspberrypi/linux $ cd ~
 ```
 
 5. Determine the the device NAME (for mounting and formatting).  In my case, the device i will be creating the Gentoo system on is `sda`.
 
 ```console
-user $ lsblk
+user@localhost ~ $ lsblk
 ```
 
 Example output of the above commands.
@@ -80,7 +81,7 @@ mmcblk0     179:0    0 59.5G  0 disk
 6. Format the MicroSD card with `fdisk` (replace all instances `sda` with your devices name, from Step 2).
 
 ```console
-root $ fdisk /dev/sda
+root ~ # fdisk /dev/sda
 ```
 
 7. Remove all previous partitions and create two new partitions.
@@ -130,9 +131,9 @@ Command (m for help): w
 10. The hard part is done!  The rest of the commands can be used with littl modification.
 
 ```console
-root # mkfs -t vfat -F 32 /dev/sda1
-root # mkfs -i 8192 -t ext4 /dev/sda2
-root # mkdir /mnt/gentoo
+localhost ~ # mkfs -t vfat -F 32 /dev/sda1
+localhost ~ # mkfs -i 8192 -t ext4 /dev/sda2
+localhost ~ # mkdir /mnt/gentoo
 root # mount /dev/sda2 /mnt/gentoo
 root # cd ~
 root # wget http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20191124.tar.bz2
