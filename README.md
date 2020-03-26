@@ -2,7 +2,7 @@
 As a new user to Gentoo, I was disappointed by the available guides for configuring a 64-bit Gentoo OS on a Raspberry Pi 4.  I found them entirely "unfriendly" to people just getting started and might deter new users from hopping onto the Gentoo bandwagon.  The following guide is my attempt to compile the information that i found from various sources to make the installation process as **straight-forward** as possible and get new users going in hours (instead of days!).  Credit to my sources is given at the bottom.
 
 ## Objective
-Provide a set a simple set of instructions to succesfully configure a minimal, but robust 64-bit Gentoo OS on a Raspberry Pi 4.
+Provide a set a simple set of instructions to succesfully configure a minimal yet robust 64-bit Gentoo environment on a Raspberry Pi 4.
 
 ## Hardware/Software Requirements
 * A PC with Gentoo already installed.  If you are not sure how to do this, you can use a second MicroSD card and boot into an existing 64-bit Gentoo [image](https://github.com/sakaki-/gentoo-on-rpi-64bit) (better yet, if you aren't comfort with the instructions below, just stick with the image!).
