@@ -9,7 +9,7 @@ As a new user to Gentoo, I was disappointed by the available guides for configur
 
 ## Important
 * Take notice of the command prefix for when to use `root` and when local `user` for permissions required.
-* When logged in as `root`, Replace all instances of `<user>` with the local user name. 
+* Any commands preceded by `#` should be executed with *root* permissions while `$` should be executed as a regular *user*. 
 * I will not be creating a swap partition as this shortens the life of the SD card.
 * Assumes the user is using the `us` keymaps.
 * Assumes the timezone you are in is 'US/Eastern'.  A list of available time zones can be found by running `ls /usr/share/zoneinfo`.
