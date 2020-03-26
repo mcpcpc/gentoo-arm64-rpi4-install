@@ -10,7 +10,7 @@ Some of these seem obvious, but they're not very high on my priority list as i c
 - [ ] Verify Bluetooth functionality (currently not using).  
 
 ## Hardware/Software Requirements
-- A PC with Gentoo already installed.  If you are not sure how to do this, you can use a second MicroSD card and boot into an existing 64-bit Gentoo [image](https://github.com/sakaki-/gentoo-on-rpi-64bit) (better yet, if you aren't comfort with the instructions below, just stick with the image!).
+- A PC with Gentoo already installed.  If you are not sure how to do this, you can use a second microSD card and boot an existing [64-bit Gentoo image](https://github.com/sakaki-/gentoo-on-rpi-64bit) (better yet, if you aren't comfort with the instructions below, just stick with the image!).
 - Raspberry Pi 4 (or newer)
 - 32GB MicroSD Card (capacity irrelevant, but probably no less than 8GB)
 - SD Card adapter (if needed)
