@@ -6,23 +6,23 @@ Provide a set a simple set of instructions to succesfully configure a minimal ye
 
 ## TODO
 Some of these seem obvious, but they're not very high on my priority list as i currently don't use some of these RPi peripherals.  Feel free to contact me or open an issues and i will try to promptly resolve them.
-- [] Verify Wifi functionality (currently not using).
-- [] Verify Bluetooth functionality (currently not using).  
+- [ ] Verify Wifi functionality (currently not using).
+- [ ] Verify Bluetooth functionality (currently not using).  
 
 ## Hardware/Software Requirements
-* A PC with Gentoo already installed.  If you are not sure how to do this, you can use a second MicroSD card and boot into an existing 64-bit Gentoo [image](https://github.com/sakaki-/gentoo-on-rpi-64bit) (better yet, if you aren't comfort with the instructions below, just stick with the image!).
-* Raspberry Pi 4 (or newer)
-* 32GB MicroSD Card (capacity irrelevant, but probably no less than 8GB)
-* SD Card adapter (if needed)
-* LAN Connection (must be connected to the internet for initial setup and updates)
+- A PC with Gentoo already installed.  If you are not sure how to do this, you can use a second MicroSD card and boot into an existing 64-bit Gentoo [image](https://github.com/sakaki-/gentoo-on-rpi-64bit) (better yet, if you aren't comfort with the instructions below, just stick with the image!).
+- Raspberry Pi 4 (or newer)
+- 32GB MicroSD Card (capacity irrelevant, but probably no less than 8GB)
+- SD Card adapter (if needed)
+- LAN Connection (must be connected to the internet for initial setup and updates)
 
 ## Important
-* These instructions assume some knowledge or experience with *UNIX* based OS.  **Do not deviate from the order unless you are confident in what you are doing**!
-* Any commands preceded by `#` should be executed with *root* permissions while `$` should be executed as a regular *user*. 
-* References to `<user` should be replaced with your local user account name. 
-* I will not be creating a swap partition as this shortens the life of the SD card.
-* Assumes the user is using the `us` keymaps.
-* Assumes the timezone you are in is 'US/Eastern'.  A list of available time zones can be found by running `ls /usr/share/zoneinfo`.
+- These instructions assume some knowledge or experience with *UNIX* based OS.  **Do not deviate from the order unless you are confident in what you are doing**!
+- Any commands preceded by `#` should be executed with *root* permissions while `$` should be executed as a regular *user*. 
+- References to `<user` should be replaced with your local user account name. 
+- I will not be creating a swap partition as this shortens the life of the SD card.
+- Assumes the user is using the `us` keymaps.
+- Assumes the timezone you are in is 'US/Eastern'.  A list of available time zones can be found by running `ls /usr/share/zoneinfo`.
 
 ## Building Gentoo System
 1. Insert the MicroSD Card into the PC you plan to build the Gentoo system on.
