@@ -3,9 +3,9 @@ As a new user to Gentoo, I was disappointed by the available guides for configur
 
 ## Hardware Requirements
 * Raspberry Pi 4 (or newer)
-* 2x 32GB MicroSD Card
+* 32GB MicroSD Card (user preference)
 * SD Card adapter (dependent on platform)
-* LAN Connection
+* LAN Connection (must be connected for initial setup)
 
 ## Important
 * Take notice of the command prefix for when to use `root` and when local `user` for permissions required.
