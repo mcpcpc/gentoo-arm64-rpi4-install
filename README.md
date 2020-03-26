@@ -81,7 +81,7 @@ mmcblk0     179:0    0 59.5G  0 disk
 6. Format the MicroSD card with `fdisk` (replace all instances `sda` with your devices name, from Step 2).
 
 ```console
-root ~ # fdisk /dev/sda
+localhost ~ # fdisk /dev/sda
 ```
 
 7. Remove all previous partitions and create two new partitions.
@@ -131,37 +131,37 @@ Command (m for help): w
 10. The hard part is done!  The rest of the commands can be used with littl modification.
 
 ```console
-root@localhost ~ # mkfs -t vfat -F 32 /dev/sda1
-root@localhost ~ # mkfs -i 8192 -t ext4 /dev/sda2
-root@localhost ~ # mkdir /mnt/gentoo
-root@localhost ~ # mount /dev/sda2 /mnt/gentoo
-root@localhost ~ # cd ~
-root@localhost ~ # wget http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20191124.tar.bz2
-root@localhost ~ # tar xfpj stage3-arm64-20191124.tar.bz2 -C /mnt/gentoo/
-root@localhost ~ # wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
-root@localhost ~ # tar xjf portage-latest.tar.bz2 -C /mnt/gentoo/usr
-root@localhost ~ # rm -rf /mnt/gentoo/tmp/*
-root@localhost ~ # mount /dev/xxx1 /mnt/gentoo/boot
-root@localhost ~ # cp -rv /home/<user>/raspberrypi/firmware/boot/* /mnt/gentoo/boot
-root@localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/Image /mnt/gentoo/boot/kernel8.img
-root@localhost ~ # mv /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb_32
-root@localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot
-root@localhost ~ # cd /home/<user>/raspberrypi/linux
-root@localhost ~ # ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make modules_install INSTALL_MOD_PATH=/mnt/gentoo
-root@localhost ~ # cp /home/<user>/armstub8-gic.bin /mnt/gentoo/boot/
-root@localhost ~ # echo "US/Eastern" > /etc/timezone
-root@localhost ~ # mkdir /mnt/gentoo/lib/firmware
-root@localhost ~ # mkdir /mnt/gentoo/lib/firmware/brcm
-root@localhost ~ # cd /mnt/gentoo/lib/firmware/brcm
-root@localhost ~ # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.bin
-root@localhost ~ # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
-root@localhost ~ # wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master/brcm/brcmfmac43455-sdio.txt
+localhost ~ # mkfs -t vfat -F 32 /dev/sda1
+localhost ~ # mkfs -i 8192 -t ext4 /dev/sda2
+localhost ~ # mkdir /mnt/gentoo
+localhost ~ # mount /dev/sda2 /mnt/gentoo
+localhost ~ # cd ~
+localhost ~ # wget http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20191124.tar.bz2
+localhost ~ # tar xfpj stage3-arm64-20191124.tar.bz2 -C /mnt/gentoo/
+localhost ~ # wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
+localhost ~ # tar xjf portage-latest.tar.bz2 -C /mnt/gentoo/usr
+localhost ~ # rm -rf /mnt/gentoo/tmp/*
+localhost ~ # mount /dev/xxx1 /mnt/gentoo/boot
+localhost ~ # cp -rv /home/<user>/raspberrypi/firmware/boot/* /mnt/gentoo/boot
+localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/Image /mnt/gentoo/boot/kernel8.img
+localhost ~ # mv /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb_32
+localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot
+localhost ~ # cd /home/<user>/raspberrypi/linux
+localhost ~ # ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make modules_install INSTALL_MOD_PATH=/mnt/gentoo
+localhost ~ # cp /home/<user>/armstub8-gic.bin /mnt/gentoo/boot/
+localhost ~ # echo "US/Eastern" > /etc/timezone
+localhost ~ # mkdir /mnt/gentoo/lib/firmware
+localhost ~ # mkdir /mnt/gentoo/lib/firmware/brcm
+localhost ~ # cd /mnt/gentoo/lib/firmware/brcm
+localhost ~ # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.bin
+localhost ~ # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
+localhost ~ # wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master/brcm/brcmfmac43455-sdio.txt
 ```
 
 11. Create the following lines in the corrosponding file(s).
 
 ```console
-root # nano -w /mnt/gentoo/etc/udev/rules.d/99-com.rules
+localhost ~ # nano -w /mnt/gentoo/etc/udev/rules.d/99-com.rules
 ```
 
 ```
@@ -200,7 +200,7 @@ KERNEL=="ttyS0", GROUP="dialout", PROGRAM="/bin/sh -c '\
 ```
 
 ```console
-root # nano -w /mnt/gentoo/boot/config.txt
+localhost ~ # nano -w /mnt/gentoo/boot/config.txt
 ```
 
 ```
@@ -228,7 +228,7 @@ root=/dev/mmcblk0p2 rootfstype=ext4 rootwait
 12. Hide the following lines in the corrosponding file(s).
 
 ```console
-root # nano -w /mnt/gentoo/etc/inittab
+localhost ~ # nano -w /mnt/gentoo/etc/inittab
 ```
 
 ```
@@ -238,7 +238,7 @@ root # nano -w /mnt/gentoo/etc/inittab
 13. Edit the following lines in the corrosponding file(s).
 
 ```console
-root # nano -w /mnt/gentoo/etc/shadow
+localhost ~ # nano -w /mnt/gentoo/etc/shadow
 ```
 
 ```
@@ -246,7 +246,7 @@ root:$6$xxPVR/Td5iP$/7Asdgq0ux2sgNkklnndcG4g3493kUYfrrdenBXjxBxEsoLneJpDAwOyX/kk
 ```
 
 ```console
-root -w /mnt/gentoo/etc/portage/make.conf
+localhost ~ # -w /mnt/gentoo/etc/portage/make.conf
 ```
 
 ```
@@ -257,7 +257,7 @@ ACCEPT_KEYWORDS="~arm64"
 14. Append the following lines in the corrosponding file(s).
 
 ```console
-root # nano -w /mnt/gentoo/etc/fstab
+localhost ~ # nano -w /mnt/gentoo/etc/fstab
 ```
 
 ```
@@ -266,7 +266,7 @@ root # nano -w /mnt/gentoo/etc/fstab
 ```
 
 ```console
-root # nano -w /mnt/gentoo/etc/locale.gen
+localhost ~ # nano -w /mnt/gentoo/etc/locale.gen
 ```
 
 ```
@@ -276,10 +276,10 @@ en_US.UTF-8 UTF-8
 15. Unmount the system and shutdown.
 
 ```console
-root # cd ~
-root # umount /mnt/gentoo/boot
-root # umount /mnt/gentoo
-root # shutdown
+localhost ~ # cd ~
+localhost ~ # umount /mnt/gentoo/boot
+localhost ~ # umount /mnt/gentoo
+localhost ~ # shutdown
 ``` 
 
 ## Setting Up and Updating your Gentoo system.
@@ -288,33 +288,33 @@ Insert the formatted and configured SD card into your Raspberry PI.  After start
 1. Set the date, time (format is `mmddhhmmyyyy`, in 24-hr format) and locale. In the example CLI command below, the date would be 31-July-2017 10:05 PM.  
 
 ```console
-root # date 073122052017
-root # locale-gen
-root # eselect locale set 4
+localhost ~ # date 073122052017
+localhost ~ # locale-gen
+localhost ~ # eselect locale set 4
 ```
 
 2. Enable the network and prepare for the long update process.
 
 ```console
-root # ip link set dev eth0 up
-root # busybox udhcpc eth0
-root # emerge --sync
-root # <need to put portage update command here>
-root # perl-cleaner --all
-root # emerge -auDN @world
-root # emerge net-misc/ntp
-root # rc-update del hwclock boot
-root # rc-update add swclock boot
-root # emerge sys-libs/timezone-data
-root # rc-service ntp-client start
-root # rc-update add ntp-client default
-root # rc-update add sshd default
-root # /etc/init.d/sshd start
-root # cd /etc/init.d/
-root # ln -sv net.lo net.eth0
-root # rc-service net.eth0 start
-root # rc-update add net.eth0 boot
-root # rc-update --update
+localhost ~ # ip link set dev eth0 up
+localhost ~ # busybox udhcpc eth0
+localhost ~ # emerge --sync
+localhost ~ # <need to put portage update command here>
+localhost ~ # perl-cleaner --all
+localhost ~ # emerge -auDN @world
+localhost ~ # emerge net-misc/ntp
+localhost ~ # rc-update del hwclock boot
+localhost ~ # rc-update add swclock boot
+localhost ~ # emerge sys-libs/timezone-data
+localhost ~ # rc-service ntp-client start
+localhost ~ # rc-update add ntp-client default
+localhost ~ # rc-update add sshd default
+localhost ~ # /etc/init.d/sshd start
+localhost ~ # cd /etc/init.d/
+localhost ~ # ln -sv net.lo net.eth0
+localhost ~ # rc-service net.eth0 start
+localhost ~ # rc-update add net.eth0 boot
+localhost ~ # rc-update --update
 ```
 
 ## Credits
