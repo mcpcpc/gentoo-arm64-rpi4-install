@@ -8,6 +8,7 @@ As a new user to Gentoo, I was disappointed by the available guides for configur
 * LAN Connection (must be connected for initial setup)
 
 ## Important
+* These instructions assume some knowledge or experience with *UNIX* based OS.  **Do not deviate from the order unless you are confident in what you are doing**!
 * Take notice of the command prefix for when to use `root` and when local `user` for permissions required.
 * Any commands preceded by `#` should be executed with *root* permissions while `$` should be executed as a regular *user*. 
 * I will not be creating a swap partition as this shortens the life of the SD card.
