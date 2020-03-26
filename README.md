@@ -131,31 +131,31 @@ Command (m for help): w
 10. The hard part is done!  The rest of the commands can be used with littl modification.
 
 ```console
-localhost ~ # mkfs -t vfat -F 32 /dev/sda1
-localhost ~ # mkfs -i 8192 -t ext4 /dev/sda2
-localhost ~ # mkdir /mnt/gentoo
-root # mount /dev/sda2 /mnt/gentoo
-root # cd ~
-root # wget http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20191124.tar.bz2
-root # tar xfpj stage3-arm64-20191124.tar.bz2 -C /mnt/gentoo/
-root # wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
-root # tar xjf portage-latest.tar.bz2 -C /mnt/gentoo/usr
-root # rm -rf /mnt/gentoo/tmp/*
-root # mount /dev/xxx1 /mnt/gentoo/boot
-root # cp -rv /home/<user>/raspberrypi/firmware/boot/* /mnt/gentoo/boot
-root # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/Image /mnt/gentoo/boot/kernel8.img
-root # mv /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb_32
-root # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot
-root # cd /home/<user>/raspberrypi/linux
-root # ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make modules_install INSTALL_MOD_PATH=/mnt/gentoo
-root # cp /home/<user>/armstub8-gic.bin /mnt/gentoo/boot/
-root # echo "US/Eastern" > /etc/timezone
-root # mkdir /mnt/gentoo/lib/firmware
-root # mkdir /mnt/gentoo/lib/firmware/brcm
-root # cd /mnt/gentoo/lib/firmware/brcm
-root # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.bin
-root # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
-root # wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master/brcm/brcmfmac43455-sdio.txt
+root@localhost ~ # mkfs -t vfat -F 32 /dev/sda1
+root@localhost ~ # mkfs -i 8192 -t ext4 /dev/sda2
+root@localhost ~ # mkdir /mnt/gentoo
+root@localhost ~ # mount /dev/sda2 /mnt/gentoo
+root@localhost ~ # cd ~
+root@localhost ~ # wget http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20191124.tar.bz2
+root@localhost ~ # tar xfpj stage3-arm64-20191124.tar.bz2 -C /mnt/gentoo/
+root@localhost ~ # wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
+root@localhost ~ # tar xjf portage-latest.tar.bz2 -C /mnt/gentoo/usr
+root@localhost ~ # rm -rf /mnt/gentoo/tmp/*
+root@localhost ~ # mount /dev/xxx1 /mnt/gentoo/boot
+root@localhost ~ # cp -rv /home/<user>/raspberrypi/firmware/boot/* /mnt/gentoo/boot
+root@localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/Image /mnt/gentoo/boot/kernel8.img
+root@localhost ~ # mv /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb_32
+root@localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot
+root@localhost ~ # cd /home/<user>/raspberrypi/linux
+root@localhost ~ # ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make modules_install INSTALL_MOD_PATH=/mnt/gentoo
+root@localhost ~ # cp /home/<user>/armstub8-gic.bin /mnt/gentoo/boot/
+root@localhost ~ # echo "US/Eastern" > /etc/timezone
+root@localhost ~ # mkdir /mnt/gentoo/lib/firmware
+root@localhost ~ # mkdir /mnt/gentoo/lib/firmware/brcm
+root@localhost ~ # cd /mnt/gentoo/lib/firmware/brcm
+root@localhost ~ # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.bin
+root@localhost ~ # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
+root@localhost ~ # wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master/brcm/brcmfmac43455-sdio.txt
 ```
 
 11. Create the following lines in the corrosponding file(s).
