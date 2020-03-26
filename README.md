@@ -225,7 +225,7 @@ root=/dev/mmcblk0p2 rootfstype=ext4 rootwait
 
 12. Hide the following lines in the corrosponding file(s).
 
-```
+```console
 root # nano -w /mnt/gentoo/etc/inittab
 ```
 
