@@ -25,7 +25,7 @@ user@localhost ~ $ cd tools/armstubs
 user@localhost ~/tools/armstub $ make CC8=aarch64-unknown-linux-gnu-gcc LD8=aarch64-unknown-linux-gnu-ld OBJCOPY8=aarch64-unknown-linux-gnu-objcopy OBJDUMP8=aarch64-unknown-linux-gnu-objdump armstub8-gic.bin
 user@localhost ~ $ cd ~
 user@localhost ~ $ mkdir ~/raspberrypi
-user@localhost ~/raspberrypi $ cd ~/raspberrypi
+user@localhost ~ $ cd ~/raspberrypi
 user@localhost ~/raspberrypi $ git clone -b stable --depth=1 https://github.com/raspberrypi/firmware
 user@localhost ~/raspberrypi $ git clone https://github.com/raspberrypi/linux
 user@localhost ~/raspberrypi $ cd ~/raspberrypi/linux
