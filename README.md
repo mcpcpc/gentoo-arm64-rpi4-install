@@ -311,7 +311,7 @@ localhost ~ # eselect locale set 4
 localhost ~ # ip link set dev eth0 up
 localhost ~ # busybox udhcpc eth0
 localhost ~ # emerge --sync
-localhost ~ # <need to put portage update command here>
+localhost ~ # emerge --oneshot sys-apps/portage
 localhost ~ # perl-cleaner --all
 localhost ~ # emerge -auDN @world
 localhost ~ # emerge net-misc/ntp
