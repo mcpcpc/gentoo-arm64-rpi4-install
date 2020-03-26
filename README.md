@@ -148,15 +148,17 @@ localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/Image /mnt/gento
 localhost ~ # mv /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb_32
 localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot
 localhost ~ # cd /home/<user>/raspberrypi/linux
-localhost ~ # ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make modules_install INSTALL_MOD_PATH=/mnt/gentoo
+localhost ~/home/<user>/raspberrypi/linux # ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make modules_install INSTALL_MOD_PATH=/mnt/gentoo
+localhost ~ # cd ~
 localhost ~ # cp /home/<user>/armstub8-gic.bin /mnt/gentoo/boot/
 localhost ~ # echo "US/Eastern" > /etc/timezone
 localhost ~ # mkdir /mnt/gentoo/lib/firmware
 localhost ~ # mkdir /mnt/gentoo/lib/firmware/brcm
 localhost ~ # cd /mnt/gentoo/lib/firmware/brcm
-localhost ~ # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.bin
-localhost ~ # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
-localhost ~ # wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master/brcm/brcmfmac43455-sdio.txt
+localhost ~/mnt/gentoo/lib/firmware/brcm # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.bin
+localhost ~/mnt/gentoo/lib/firmware/brcm # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
+localhost ~/mnt/gentoo/lib/firmware/brcm # wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master/brcm/brcmfmac43455-sdio.txt
+localhost ~ # cd ~
 ```
 
 11. Create the following lines in the corrosponding file(s).
