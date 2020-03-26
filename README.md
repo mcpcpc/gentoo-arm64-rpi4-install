@@ -151,8 +151,9 @@ root # echo "US/Eastern" > /etc/timezone
 root # mkdir /mnt/gentoo/lib/firmware
 root # mkdir /mnt/gentoo/lib/firmware/brcm
 root # cd /mnt/gentoo/lib/firmware/brcm
-root # wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/brcm/brcmfmac43455-sdio.bin
-root # wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/brcm/brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+root # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.bin
+root # wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
+root # wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master/brcm/brcmfmac43455-sdio.txt
 ```
 
 11. Create the following lines in the corrosponding file(s).
