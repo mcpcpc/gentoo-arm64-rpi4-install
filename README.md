@@ -18,7 +18,7 @@ As a new user to Gentoo, I was disappointed by the available guides for configur
 1. Insert the MicroSD Card into the PC you plan to build the Gentoo system on.
 2. Prepare the raspberry pi build.
 
-```bash
+```console
 user $ cd ~
 user $ git clone https://github.com/raspberrypi/tools
 user $ cd tools/armstubs
@@ -55,13 +55,13 @@ user $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make menuconfig
 
 4. Build the Kernel.
 
-```bash
+```console
 user $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make -j5
 ```
 
 5. Determine the the device NAME (for mounting and formatting).  In my case, the device i will be creating the Gentoo system on is `sda`.
 
-```bash
+```console
 user $ lsblk
 ```
 
@@ -78,7 +78,7 @@ mmcblk0     179:0    0 59.5G  0 disk
 
 6. Format the MicroSD card with `fdisk` (replace all instances `sda` with your devices name, from Step 2).
 
-```bash
+```console
 root $ fdisk /dev/sda
 ```
 
@@ -128,7 +128,7 @@ Command (m for help): w
 
 10. The hard part is done!  The rest of the commands can be used with littl modification.
 
-```bash
+```console
 root # mkfs -t vfat -F 32 /dev/sda1
 root # mkfs -i 8192 -t ext4 /dev/sda2
 root # mkdir /mnt/gentoo
@@ -158,7 +158,7 @@ root # wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master
 
 11. Create the following lines in the corrosponding file(s).
 
-```bash
+```console
 root # nano -w /mnt/gentoo/etc/udev/rules.d/99-com.rules
 ```
 
@@ -197,7 +197,7 @@ KERNEL=="ttyS0", GROUP="dialout", PROGRAM="/bin/sh -c '\
 '", SYMLINK+="serial%c"
 ```
 
-```bash
+```console
 root # nano -w /mnt/gentoo/boot/config.txt
 ```
 
@@ -215,7 +215,7 @@ hdmi_drive=2
 dtparam=audio=on
 ```
 
-```bash
+```console
 root # nano -w /mnt/gentoo/boot/cmdline.txt
 ```
 
@@ -235,7 +235,7 @@ root # nano -w /mnt/gentoo/etc/inittab
 
 13. Edit the following lines in the corrosponding file(s).
 
-```bash
+```console
 root # nano -w /mnt/gentoo/etc/shadow
 ```
 
@@ -243,7 +243,7 @@ root # nano -w /mnt/gentoo/etc/shadow
 root:$6$xxPVR/Td5iP$/7Asdgq0ux2sgNkklnndcG4g3493kUYfrrdenBXjxBxEsoLneJpDAwOyX/kkpFB4pU5dlhHEyN0SK4eh/WpmO0::0:99999:7:::
 ```
 
-```bash
+```console
 root -w /mnt/gentoo/etc/portage/make.conf
 ```
 
@@ -254,7 +254,7 @@ ACCEPT_KEYWORDS="~arm64"
 
 14. Append the following lines in the corrosponding file(s).
 
-```bash
+```console
 root # nano -w /mnt/gentoo/etc/fstab
 ```
 
@@ -263,7 +263,7 @@ root # nano -w /mnt/gentoo/etc/fstab
 /dev/mmcblk0p2          /               ext4            noatime         0 1
 ```
 
-```bash
+```console
 root # nano -w /mnt/gentoo/etc/locale.gen
 ```
 
@@ -273,7 +273,7 @@ en_US.UTF-8 UTF-8
 
 15. Unmount the system and shutdown.
 
-```bash
+```console
 root # cd ~
 root # umount /mnt/gentoo/boot
 root # umount /mnt/gentoo
@@ -285,7 +285,7 @@ Insert the formatted and configured SD card into your Raspberry PI.  After start
 
 1. Set the date, time (format is `mmddhhmmyyyy`, in 24-hr format) and locale. In the example CLI command below, the date would be 31-July-2017 10:05 PM.  
 
-```bash
+```console
 root # date 073122052017
 root # locale-gen
 root # eselect locale set 4
@@ -293,7 +293,7 @@ root # eselect locale set 4
 
 2. Enable the network and prepare for the long update process.
 
-```bash
+```console
 root # ip link set dev eth0 up
 root # busybox udhcpc eth0
 root # emerge --sync
