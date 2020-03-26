@@ -218,7 +218,7 @@ dtparam=audio=on
 ```
 
 ```console
-root # nano -w /mnt/gentoo/boot/cmdline.txt
+localhost ~ # nano -w /mnt/gentoo/boot/cmdline.txt
 ```
 
 ```
