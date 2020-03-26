@@ -19,17 +19,18 @@ As a new user to Gentoo, I was disappointed by the available guides for configur
 2. Prepare the raspberry pi build.
 
 ```console
-user $ cd ~
-user $ git clone https://github.com/raspberrypi/tools
-user $ cd tools/armstubs
-user $ make CC8=aarch64-unknown-linux-gnu-gcc LD8=aarch64-unknown-linux-gnu-ld OBJCOPY8=aarch64-unknown-linux-gnu-objcopy OBJDUMP8=aarch64-unknown-linux-gnu-objdump armstub8-gic.bin
-user $ mkdir ~/raspberrypi
-user $ cd ~/raspberrypi
-user $ git clone -b stable --depth=1 https://github.com/raspberrypi/firmware
-user $ git clone https://github.com/raspberrypi/linux
-user $ cd ~/raspberrypi/linux
-user $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make bcm2711_defconfig
-user $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make menuconfig
+user ~ $ cd ~
+user ~ $ git clone https://github.com/raspberrypi/tools
+user ~ $ cd tools/armstubs
+user ~/tools/armstub $ make CC8=aarch64-unknown-linux-gnu-gcc LD8=aarch64-unknown-linux-gnu-ld OBJCOPY8=aarch64-unknown-linux-gnu-objcopy OBJDUMP8=aarch64-unknown-linux-gnu-objdump armstub8-gic.bin
+user ~ $ cd ~
+user ~ $ mkdir ~/raspberrypi
+user ~/raspberrypi $ cd ~/raspberrypi
+user ~/raspberrypi $ git clone -b stable --depth=1 https://github.com/raspberrypi/firmware
+user ~/raspberrypi $ git clone https://github.com/raspberrypi/linux
+user ~/raspberrypi $ cd ~/raspberrypi/linux
+user ~/raspberrypi/linux $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make bcm2711_defconfig
+user ~/raspberrypi/linux $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make menuconfig
 ```
 
 3. While in the Kernel configuration menu, set the  Default CPUFreq governor to 'ondemand' (see example below).
