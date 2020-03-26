@@ -4,6 +4,11 @@ As a new user to Gentoo, I was disappointed by the available guides for configur
 ## Objective
 Provide a set a simple set of instructions to succesfully configure a minimal yet robust 64-bit Gentoo environment on a Raspberry Pi 4.
 
+## TODO
+Some of these seem obvious, but they're not very high on my priority list as i currently don't use some of these RPi peripherals.  Feel free to contact me or open an issues and i will try to promptly resolve them.
+* Verify Wifi functionality (currently not using).
+* Verify Bluetooth functionality (currently not using).  
+
 ## Hardware/Software Requirements
 * A PC with Gentoo already installed.  If you are not sure how to do this, you can use a second MicroSD card and boot into an existing 64-bit Gentoo [image](https://github.com/sakaki-/gentoo-on-rpi-64bit) (better yet, if you aren't comfort with the instructions below, just stick with the image!).
 * Raspberry Pi 4 (or newer)
