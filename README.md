@@ -151,7 +151,7 @@ localhost ~ # tar xfpj stage3-arm64-20191124.tar.bz2 -C /mnt/gentoo/
 localhost ~ # wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
 localhost ~ # tar xjf portage-latest.tar.bz2 -C /mnt/gentoo/usr
 localhost ~ # rm -rf /mnt/gentoo/tmp/*
-localhost ~ # mount /dev/xxx1 /mnt/gentoo/boot
+localhost ~ # mount /dev/sda1 /mnt/gentoo/boot
 localhost ~ # cp -rv /home/<user>/raspberrypi/firmware/boot/* /mnt/gentoo/boot
 localhost ~ # cp /home/<user>/raspberrypi/linux/arch/arm64/boot/Image /mnt/gentoo/boot/kernel8.img
 localhost ~ # mv /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb /mnt/gentoo/boot/bcm2711-rpi-4-b.dtb_32
