@@ -314,10 +314,10 @@ localhost ~ # rc-update add ntp-client default
 localhost ~ # rc-update add sshd default
 localhost ~ # /etc/init.d/sshd start
 localhost ~ # cd /etc/init.d/
-localhost ~ # ln -sv net.lo net.eth0
-localhost ~ # rc-service net.eth0 start
-localhost ~ # rc-update add net.eth0 boot
-localhost ~ # rc-update --update
+localhost ~/etc/init.d # ln -sv net.lo net.eth0
+localhost ~/etc/init.d # rc-service net.eth0 start
+localhost ~/etc/init.d # rc-update add net.eth0 boot
+localhost ~/etc/init.d # rc-update --update
 ```
 
 ## Credits
