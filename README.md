@@ -2,7 +2,7 @@
 As a new user to Gentoo, I was disappointed by the available guides for configuring a 64-bit Gentoo environment on a Raspberry Pi 4.  I found them entirely "unfriendly" to people just getting started and might deter new users from hopping onto the Gentoo bandwagon.  The following guide is my attempt to compile the information that i found from various sources to make the installation process as **straight-forward** as possible and get new users going in hours (instead of days!).  Credit to my sources is given at the bottom.
 
 ## Objective
-Provide a set a simple set of instructions to succesfully configure a minimal yet robust 64-bit Gentoo environment on a Raspberry Pi 4.
+Provide a set a simple set of instructions to succesfully configure a minimal (yet robust) 64-bit Gentoo environment on a Raspberry Pi 4.
 
 ## TODO
 Some of these seem obvious, but they're not very high on my priority list as i currently don't use some of these RPi peripherals.  Feel free to contact me or open an issues and i will try to promptly resolve them.
@@ -19,15 +19,15 @@ Some of these seem obvious, but they're not very high on my priority list as i c
 
 ## Important
 - These instructions assume some knowledge/experience with a Linux.  **I would HIGHLY recommend not deviating from the installation order unless you know what you are doing**.
-- Any commands preceded by `#` should be executed with *root* permissions while `$` should be executed as a regular *user*. 
-- References to `<user>` should be replaced with your regular user account name. 
-- I will not be creating a swap partition as this shortens the life of the SD card.
-- Assumes the user is using the `us` keymaps.
-- Assumes the timezone you are in is 'US/Eastern'.  A list of available time zones can be found by running `ls /usr/share/zoneinfo`.
+- Any commands preceded by `#` should be executed with *root* permissions while `$` should be executed as a *regular user*. 
+- References to `<user>` should be replaced with your *regular user* account name. 
+- I do not use a swap partition as this degrades/shortens the life of the SD card.
+- Assumption 1: the user is using the `us` keymaps. Modify commands as needed 
+- Assumption 2: the timezone you are in is 'US/Eastern'.  A list of available time zones can be found by running `ls /usr/share/zoneinfo`. Modify commands as needed. 
 
 ## Building Gentoo System
 1. Insert the MicroSD Card into the PC you plan to build the Gentoo system on.
-2. Prepare the raspberry pi build.
+2. Prepare the raspberry pi image and Kernel build.
 
 ```console
 user@localhost ~ $ cd ~
@@ -44,7 +44,7 @@ user@localhost ~/raspberrypi/linux $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-li
 user@localhost ~/raspberrypi/linux $ ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu- make menuconfig
 ```
 
-3. While in the Kernel configuration menu, set the  Default CPUFreq governor to 'ondemand' (see example below).
+3. While at the Kernel configuration menu, set the  Default CPUFreq governor to 'ondemand' (see example below).
 
 ```
 .config - Linux/arm64 4.14.72-raspberrypi Kernel Configuration
@@ -89,13 +89,13 @@ mmcblk0     179:0    0 59.5G  0 disk
 └─mmcblk0p2 179:2    0 59.2G  0 part /
 ``` 
 
-6. Format the MicroSD card with `fdisk` (replace all instances `sda` with your devices name, from Step 2).
+6. Format the MicroSD card with *fdisk* (replace all instances `sda` with your devices name, from Step 2).
 
 ```console
 localhost ~ # fdisk /dev/sda
 ```
 
-7. Remove all previous partitions and create two new partitions.
+7. Remove all previous partitions and create two new partitions: *boot* and *root*.
 
 ```
 Command (m for help): o
@@ -133,7 +133,7 @@ Partition number (1-3, default 3): 1
 Partition type (type L to list all types): c
 ```
 
-9. Write all changes and exit `fdisk`.
+9. Write all changes and exit *fdisk*.
 
 ```
 Command (m for help): w
@@ -171,7 +171,7 @@ localhost ~/mnt/gentoo/lib/firmware/brcm # wget https://raw.githubusercontent.co
 localhost ~ # cd ~
 ```
 
-11. Create the following lines in the corrosponding file(s).
+11. Create the corrosponding file(s).
 
 ```console
 localhost ~ # nano -w /mnt/gentoo/etc/udev/rules.d/99-com.rules
