@@ -372,6 +372,7 @@ A suckless alternative to *sudo*.
 ```console
 root ~ # echo '=app-admin/doas-6.6.1 **' > /etc/portage/package.keywords/doas
 root ~ # emerge =app-admin/doas-6.6.1
+root ~ # echo 'permit persist :wheel' > /etc/doas.conf
 ```
 
 ## Credits
