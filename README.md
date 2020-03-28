@@ -357,7 +357,7 @@ localhost ~/etc/init.d # rc-update --update
 
 The following are considered optional tools but may be required for other Raspberry Pi I/O.
 
-### Layman
+### layman
 Required for Raspberry Pi firmware updates.
 
 ```console
@@ -366,6 +366,13 @@ root ~ # emerge app-portage/layman
 root ~ # mkdir /etc/portage/repos.conf
 ```
 
+### doas
+A suckless alternative to *sudo*.
+
+```console
+root ~ # echo '=app-admin/doas-6.6.1 **' > /etc/portage/package.keywords/doas
+root ~ # emerge =app-admin/doas-6.6.1
+```
 
 ## Credits
 * https://wiki.gentoo.org/wiki/User:NeddySeagoon/Raspberry_Pi4_64_Bit_Install
