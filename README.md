@@ -20,7 +20,7 @@ Some of these seem obvious, but they're not very high on my priority list as i c
 - Keyboard, Mouse, Monitor and all peripheral cables. 
 
 ## Important
-- These instructions assume some knowledge/experience with a Linux.  **I would HIGHLY recommend not deviating from the installation order unless you know what you are doing**.
+- These instructions assume some prior  knowledge/experience with a Linux.  **I would HIGHLY recommend not deviating from the installation order unless you know what you are doing**.
 - Any commands preceded by `#` should be executed with *root* permissions while `$` should be executed as a *regular user*. 
 - References to `<user>` should be replaced with your *regular user* account name. 
 - I do not use a swap partition as this degrades/shortens the life of the SD card.
