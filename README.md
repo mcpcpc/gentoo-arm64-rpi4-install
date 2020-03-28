@@ -175,6 +175,24 @@ localhost ~ # cd ~
 11. Create the corrosponding file(s).
 
 ```console
+localhost ~ # nano -w /mnt/gentoo/etc/init.d/btattach
+```
+
+```console
+#!/sbin/openrc-run
+
+command="/usr/bin/btattach"
+command_args="-B /dev/ttyAMA0 -P bcm -S 3000000"
+command_background=true
+pidfile="/run/btattach.pid"
+
+depend() {
+	after coldplug hotplug modules
+	need localmount
+}
+```
+
+```console
 localhost ~ # nano -w /mnt/gentoo/etc/udev/rules.d/99-com.rules
 ```
 
