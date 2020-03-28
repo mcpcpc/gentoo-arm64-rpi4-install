@@ -26,7 +26,7 @@ Some of these seem obvious, but they're not very high on my priority list as i c
 - Assumption 1: the user is using the `us` keymaps. Modify commands as needed 
 - Assumption 2: the timezone you are in is 'US/Eastern'.  A list of available time zones can be found by running `ls /usr/share/zoneinfo`. Modify commands as needed. 
 
-## Building Gentoo System
+## Configuring Gentoo and the System Kernel
 1. Insert the MicroSD Card into the PC you plan to build the Gentoo system on.
 2. Prepare the raspberry pi image and Kernel build.
 
@@ -314,7 +314,7 @@ localhost ~ # umount /mnt/gentoo
 localhost ~ # shutdown
 ``` 
 
-## Setting Up and Updating your Gentoo system.
+## Updating Gentoo and Getting Periphirals Working
 Insert the formatted and configured SD card into your Raspberry PI.  After startup, you will hopefully be greeted by a login prompt.  Default username should be `root` and password should be `raspberry`.
 
 1. Set the date, time (format is `mmddhhmmyyyy`, in 24-hr format) and locale. In the example CLI command below, the date would be 31-July-2017 10:05 PM.  
@@ -352,6 +352,20 @@ localhost ~/etc/init.d # rc-service net.eth0 start
 localhost ~/etc/init.d # rc-update add net.eth0 boot
 localhost ~/etc/init.d # rc-update --update
 ```
+
+## Additional Tools
+
+The following are considered optional tools but may be required for other Raspberry Pi I/O.
+
+### Layman
+Required for Raspberry Pi firmware updates.
+
+```console
+root ~ # echo 'app-portage/layman sync-plugin-portage git' > /etc/portage/package.use/layman
+root ~ # emerge app-portage/layman
+mkdir /etc/portage/repos.conf
+```
+
 
 ## Credits
 * https://wiki.gentoo.org/wiki/User:NeddySeagoon/Raspberry_Pi4_64_Bit_Install
