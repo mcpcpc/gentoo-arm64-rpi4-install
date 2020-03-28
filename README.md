@@ -324,6 +324,10 @@ localhost ~ # rc-service ntp-client start
 localhost ~ # rc-update add ntp-client default
 localhost ~ # rc-update add sshd default
 localhost ~ # /etc/init.d/sshd start
+localhost ~ # emerge net-wireless/bluez
+localhost ~ # chmod +x /etc/init.d/btattach
+localhost ~ # rc-service btattach start
+localhost ~ # rc-update add btattach default
 localhost ~ # cd /etc/init.d/
 localhost ~/etc/init.d # ln -sv net.lo net.eth0
 localhost ~/etc/init.d # rc-service net.eth0 start
