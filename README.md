@@ -363,7 +363,7 @@ Required for Raspberry Pi firmware updates.
 ```console
 root ~ # echo 'app-portage/layman sync-plugin-portage git' > /etc/portage/package.use/layman
 root ~ # emerge app-portage/layman
-mkdir /etc/portage/repos.conf
+root ~ # mkdir /etc/portage/repos.conf
 ```
 
 
