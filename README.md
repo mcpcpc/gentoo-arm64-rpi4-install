@@ -367,6 +367,16 @@ root ~ # emerge app-portage/layman
 root ~ # mkdir /etc/portage/repos.conf
 ```
 
+### Firmware Updates
+
+```console
+root ~ # echo 'sys-apps/flashrom -internal -atapromise' > /etc/portage/package.use/flashrom
+root ~ # 
+root ~ # emerge -v media-libs/raspberrypi-userland::genpi64
+root ~ # emerge -v dev-embedded/rpi4-eeprom-images::genpi64
+root ~ # emerge -v dev-embedded/rpi4-eeprom-updater::genpi64
+```
+
 ### doas
 A suckless alternative to *sudo*.
 
