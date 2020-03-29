@@ -371,7 +371,7 @@ root ~ # mkdir /etc/portage/repos.conf
 
 ```console
 root ~ # echo 'sys-apps/flashrom -internal -atapromise' > /etc/portage/package.use/flashrom
-root ~ # 
+root ~ # layman -o https://raw.githubusercontent.com/sakaki-/genpi64-overlay/master/repositories.xml -f -a genpi64
 root ~ # emerge -v media-libs/raspberrypi-userland::genpi64
 root ~ # emerge -v dev-embedded/rpi4-eeprom-images::genpi64
 root ~ # emerge -v dev-embedded/rpi4-eeprom-updater::genpi64
